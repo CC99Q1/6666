@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: #030108;
+  color: #d4d4d4;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #030108; }
+::-webkit-scrollbar-thumb { background: #1e1b4b; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #312e81; }
+
+/* Pure CSS Text/Section Animation */
+.animate-word {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(20px);
+  animation: fadeUp 0.8s cubic-bezier(0.2, 0.65, 0.3, 0.9) forwards;
+  animation-delay: calc(var(--delay) * 0.1s);
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+/* Ambient Deep Gradients */
+.animate-bg-1 {
+  animation: floatBg1 12s ease-in-out infinite alternate;
+}
+.animate-bg-2 {
+  animation: floatBg2 15s ease-in-out infinite alternate 2s;
+}
+@keyframes floatBg1 {
+  0% { transform: scale(1); opacity: 0.15; }
+  100% { transform: scale(1.1); opacity: 0.25; }
+}
+@keyframes floatBg2 {
+  0% { transform: scale(1); opacity: 0.1; }
+  100% { transform: scale(1.2); opacity: 0.2; }
+}
+
+/* Abstract Art (Suppressed Chaos) */
+.blob-1 {
+  animation: rotateBlob1 15s linear infinite;
+}
+.blob-2 {
+  animation: rotateBlob2 20s linear infinite;
+}
+
+@keyframes rotateBlob1 {
+  0% { transform: rotate(0deg) scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  50% { transform: rotate(180deg) scale(1.3); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  100% { transform: rotate(360deg) scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+}
+@keyframes rotateBlob2 {
+  0% { transform: rotate(360deg) scale(0.9); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { transform: rotate(180deg) scale(1.2); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  100% { transform: rotate(0deg) scale(0.9); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.ripple-line-h { animation: expandH 4s ease-in-out infinite; }
+.ripple-line-v { animation: expandV 4s ease-in-out infinite 1s; }
+
+@keyframes expandH {
+  0%, 100% { width: 0px; opacity: 0; }
+  50% { width: 120px; opacity: 0.4; }
+}
+@keyframes expandV {
+  0%, 100% { height: 0px; opacity: 0; }
+  50% { height: 120px; opacity: 0.4; }
+}
